@@ -6,7 +6,6 @@ export class AppPage {
   }
 
   getParagraphText() {
-  //  browser.sleep(2000000);
     return element(by.css('.navbar-brand')).getText();
   }
 
@@ -20,5 +19,9 @@ export class AppPage {
 
   getFirstCity() {
     return element(by.css('.city'));
+  }
+
+  getErrorMessage() {
+    return element(by.css('.alert'));
   }
 }

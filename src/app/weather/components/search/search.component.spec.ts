@@ -3,7 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './search.component';
 import { Store } from '@ngrx/store';
-import { MockStore } from '../../../testing/MockStore';
+import { MockStore } from '../../../testing/mockstore';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -14,8 +14,8 @@ describe('SearchComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ SearchComponent ],
       imports: [ReactiveFormsModule],
-      providers:[
-        {provide:Store, useValue: new MockStore( {
+      providers: [
+        {provide: Store, useValue: new MockStore( {
           weathers: [],
           inProgress: false,
           error: ''

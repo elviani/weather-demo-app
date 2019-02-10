@@ -1,9 +1,8 @@
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { EffectsTestingModule } from '../../../testing/testing.module';
 import { WeatherEffects } from './weather';
 import { WeatherService } from '../../weather.service';
 import { Observable } from 'rxjs/Observable';
-import {_throw} from 'rxjs/observable/throw';
 import 'rxjs/add/observable/of';
 import { EffectsRunner } from '../../../testing/runner';
 import * as weatherActions from '../actions/weather';
@@ -58,18 +57,4 @@ describe('WeatherEffects', () => {
         });
   
       });
-
-    //   it('should return a AddNewCityFail action, on error, after the de-bounce', fakeAsync(function () {
-    //     const expectedResult = new weatherActions.AddNewCityFail('error');
-    //     const resultFromEffect = null;
-  
-    //     weatherService.searchWeatherForCity.and.returnValue(Observable._throw('error'));
-    //     runner.queue(new weatherActions.AddNewCity('aaaa'));
-  
-    //     weatherEffects.addNewCity$.subscribe(result => result = resultFromEffect);
-    //     tick(399);
-    //     expect(result).toEqual(null);
-    //     tick(400);
-    //     expect(result).toEqual(expectedResult);
-    //   }));
 });

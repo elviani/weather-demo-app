@@ -20,8 +20,17 @@ describe('angular-weather App', () => {
     await page.getInputField().sendKeys('London');
     await page.clickSubmitButton();
     await browser.wait(EC.presenceOf(await page.getFirstCity()));
-     browser.sleep(2000);
-     const city = await page.getFirstCity().getText();
+    const city = await page.getFirstCity().getText();
     expect(city).toEqual('London');
+  });
+
+  it(`should show error on unknown city`, async () => {
+    page.navigateTo();
+    await page.getInputField().clear();
+    await page.getInputField().sendKeys('ababab');
+    await page.clickSubmitButton();
+    await browser.wait(EC.presenceOf(await page.getErrorMessage()));
+    const error = await page.getErrorMessage().getText();
+    expect(error).toEqual('Error: city not found');
   });
 });
