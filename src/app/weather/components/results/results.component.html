@@ -14,7 +14,7 @@
   </thead>
   <tbody *ngIf="weathers$ | async as weathers">
   <tr *ngFor="let weather of weathers">
-    <td scope="row">{{weather.city.name}}</td>
+    <td scope="row" class="city">{{weather.city.name}}</td>
     <td scope="row">{{getTemperature(weather.list, 6)}} &deg;</td>
     <td scope="row">{{getTemperature(weather.list, 12)}} &deg;</td>
     <td scope="row">{{getTemperature(weather.list, 18)}} &deg;</td>

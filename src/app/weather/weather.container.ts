@@ -8,8 +8,9 @@ import { Weather } from '../model/weather';
   <app-search></app-search>
   <app-results></app-results>  `
 })
+
 export class WeatherContainer {
 
   constructor() {}
-  
+
 }

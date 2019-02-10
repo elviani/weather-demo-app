@@ -1,18 +1,17 @@
 import { WeatherActionType, WeatherAction} from '../actions/weather';
 import { Weather } from '../../../model/weather';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-  
+
   export interface State {
     weathers: WeatherState;
   }
-  
+
   export interface WeatherState {
     weathers: Weather[];
     inProgress: boolean;
     error: string;
   }
-  
-  
+
   const initialState: WeatherState = {
     weathers: [],
     inProgress: false,
@@ -20,12 +19,12 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
   };
 
   const getWeatherFeatureState = createFeatureSelector<WeatherState>('weather');
-  
+
   export const getWeathers = createSelector(
     getWeatherFeatureState,
     state => state.weathers
   );
-  
+
   export const getError = createSelector(
     getWeatherFeatureState,
     state => state.error
@@ -35,7 +34,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
     getWeatherFeatureState,
     state => state.inProgress
   );
-   
+
   export function reducer(state = initialState, action: WeatherAction): WeatherState {
     switch (action.type) {
       case WeatherActionType.AddNewCity:

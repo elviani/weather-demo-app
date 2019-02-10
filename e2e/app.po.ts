@@ -6,6 +6,19 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  //  browser.sleep(2000000);
+    return element(by.css('.navbar-brand')).getText();
+  }
+
+  getInputField() {
+    return element(by.css('input'));
+  }
+
+  clickSubmitButton() {
+    return element(by.css('button')).click();
+  }
+
+  getFirstCity() {
+    return element(by.css('.city'));
   }
 }

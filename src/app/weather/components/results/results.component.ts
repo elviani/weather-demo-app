@@ -4,8 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 /* NgRx */
 import { Store, select } from '@ngrx/store';
-import * as fromProduct from '../../store/reducers/weather';
-import * as productActions from '../../store/actions/weather';
+import * as fromWeather from '../../store/reducers/weather';
 
 @Component({
   selector: 'app-results',
@@ -16,11 +15,11 @@ export class ResultsComponent implements OnInit, OnChanges {
   weathers$: Observable<Weather[]>;
   errorMessage$: Observable<string>;
 
-  constructor(private store: Store<fromProduct.State>) { }
+  constructor(private store: Store<fromWeather.State>) { }
 
   ngOnInit() {
-    this.weathers$ = this.store.pipe(select(fromProduct.getWeathers)) as Observable<Weather[]>;
-    this.errorMessage$ = this.store.pipe(select(fromProduct.getError));
+    this.weathers$ = this.store.pipe(select(fromWeather.getWeathers));
+    this.errorMessage$ = this.store.pipe(select(fromWeather.getError));
   }
 
   ngOnChanges() {

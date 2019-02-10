@@ -26,5 +26,4 @@ describe('WeatherContainer', () => {
     expect(component).toBeTruthy();
   });
 
-  // PLEASE IMPLEMENT MORE TESTS
 });

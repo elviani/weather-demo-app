@@ -1,21 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { SearchComponent } from './search.component';
+import { ResultsComponent } from './results.component';
 import { Store } from '@ngrx/store';
 import { MockStore } from '../../../testing/MockStore';
 
-describe('SearchComponent', () => {
-  let component: SearchComponent;
-  let fixture: ComponentFixture<SearchComponent>;
+describe('ResultsComponent', () => {
+  let component: ResultsComponent;
+  let fixture: ComponentFixture<ResultsComponent>;
   let _store: any;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ],
-      imports: [ReactiveFormsModule],
+      declarations: [ ResultsComponent ],
       providers:[
-        {provide:Store, useValue: new MockStore( {
+        {provide:Store, useValue: new MockStore({
           weathers: [],
           inProgress: false,
           error: ''
@@ -27,7 +25,7 @@ describe('SearchComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchComponent);
+    fixture = TestBed.createComponent(ResultsComponent);
     component = fixture.componentInstance;
     _store = fixture.debugElement.injector.get(Store);
     fixture.detectChanges();
@@ -35,10 +33,6 @@ describe('SearchComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('store should be defined', () => {
-    expect(_store).toBeDefined();
   });
 
 });
