@@ -16,10 +16,10 @@ export class AddNewCitySuccess implements Action {
     readonly type = WeatherActionType.AddNewCitySuccess;
     constructor(public payload: Weather) { }
 }
-  
+
 export class AddNewCityFail implements Action {
     readonly type = WeatherActionType.AddNewCityFail;
     constructor(public payload: string) { }
 }
-  
+
 export type WeatherAction = AddNewCity | AddNewCitySuccess | AddNewCityFail;
